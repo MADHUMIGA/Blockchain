@@ -36,18 +36,30 @@
 
 ## Project Structure
 
+## Project Structure
+
 ```text
+├── Frontend/                           # Frontend React/UI application directory
+├── blockchain/
+│   ├── privateChain.js                 # Private chain interaction scripts
+│   ├── publicChain.js                  # Public chain read interaction scripts
+│   └── publicWrite.js                  # Public chain write interaction scripts
 ├── contracts/
-│   ├── PrivateChain.sol       # Private Governance Contract (Lifecycle & Access Control)
-│   └── PublicChain.sol        # Public Registry Contract (Immutable Proofs)
+│   ├── PrivateCertificateGovernance.sol # Private ledger contract for lifecycle management
+│   └── PublicCertificateRegistry.sol   # Public ledger contract for immutable hash verification
+├── dual-ledger/                        # Application Screenshot
+├── routes/
+│   ├── adminCertificates.js            # Admin certificate management API routes
+│   ├── company.js                      # Verification routes for employers/verifiers
+│   └── university.js                   # University issuance and management routes
 ├── scripts/
-│   └── deploy.js              # Hardhat deployment script for local/test networks
-├── Frontend
-| ├── src/
-│   ├── components/            # UI components and tables
-│   ├── context/               # WalletContext for Web3 authentication
-│   ├── services/              # API and Ethers.js interaction layer
-│   └── pages/                 # Dashboard, University Panel, Verification Portal
+│   └── deploy.js                       # Contract deployment automation script
+├── services/
+│   └── ocrService.js                   # Optical Character Recognition processing service
+├── test/                               # Automated test suites
+├── utils/
+│   ├── hashUtil.js                     # Keccak-256 cryptographic hashing helper utilities
+│   └── statusMap.js                    # Certificate status mapping utilities (ISSUED, SUSPENDED, REVOKED)
 └── README.md
 ```
 
